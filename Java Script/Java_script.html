@@ -1,0 +1,238 @@
+<!-- // high level programing language
+//  - both frontend and backend
+//  - 1995 - Brendan Eich, Company - Netscap
+//  - types: 1. Inline 2. internal 3. external
+//  - libraries = njs, rjs, ejs, ajs, vjs,..14+ -->
+ <!-- - variables - let, var, const -->
+ <!-- - let = Only one time declaration possible
+ - var = can Declaration and re initialisation
+ - const = fixed -->
+
+
+ <!-- - DOM: Document Object Model
+  html + css + js
+  Structure - Website -> Tree
+  Root - Parents - Siblings - Cousins
+   type conversion data types -->
+
+
+  <!-- - Js operators: 6 - Arthematic + - * / ,
+                         Assignment += *=,
+                         Logical && ||
+                         Comparison / relational  < > = == === 
+                         String oper +(Concatination)
+                         Ternary oper ? : -->
+<!-- ------------------ -->
+ <!-- - CONTROL STRUCTURES in JS : 
+  Types - 2 - Conditional Statements / Branching Statements:
+                if, else, elif else..etc, switch, break, continue
+            - Looping Statements / Iterational Statements
+                for, while, do while
+  To control the flow of the program -->
+
+
+
+<!-- Error Handling
+try : having errors of code
+catch : resolving error
+
+finally : optional -->
+
+
+
+<!-- After MSE -->
+<!-- Case Study:
+    Grade Calculator -->
+<!-- Case Study2: Seasons / Valentines week -->
+<!-- Case Study 3: Wp to print math table (user table) (range 1-10) -->
+<!-- Login form(css + html + js) -->
+
+
+<!-- <html>
+    <head>
+        <title>Java script</title>
+        
+    </head>
+    <body>
+        <h1 >Java Script</h1>
+        <script>
+            var a = Number(prompt("Enter a: "));
+            var b = Number(prompt("Enter b: "));
+            document.writeln(a+b); -->
+            <!-- // var a = Number(prompt("Enter a: "));
+            // var b = Number(prompt("Enter b: "));
+            // console.log(a+b);
+            // document.writeln(a+b+"<br>");
+            // document.write(a+b);
+
+            // let age = Number(prompt("Enter age: "))
+            // if (age >= 18){
+            //     document.write("Eligible for marry")
+            // }else{
+            //     document.write("Still kid")
+            // }
+            // let boy = Number(prompt("Enter boy age: "))
+            // let girl = Number(prompt("Enter girl age: "))
+            // if (boy >= 21){
+            //     document.write("Eligible for marry");
+            // }
+            // else if (girl >= 18){
+            //     document.write("Eligible for marry");
+
+            // }
+            // else{
+            //     document.write("Not eligible for marry")
+            // }
+
+
+
+            // SWITCH
+            // let day = Number(prompt("Enter your day no: "))
+            // switch(day){
+            //     case 1:
+            //         document.write("Sunday")
+            //         break;
+            //     case 2:
+            //         document.write("Monday")
+            //         break;
+            //     case 3:
+            //         document.write("Tuesday")
+            //         break;
+            //     case 4:
+            //         document.write("Wednesday")
+            //         break;
+            //     case 5:
+            //         document.write("Thurday")
+            //         break;
+            //     case 6:
+            //         document.write("Friday")
+            //         break;
+            //     case 7:
+            //         document.write("Saturday")
+            //         break;
+            //     default:
+            //         document.write("Enter correct day")   
+            // }
+
+
+
+
+            // LOOPING STATEMENTS
+            // for(let i=0; i<=10; i++){
+            //     document.write(i + " ")
+            // }
+
+
+            // let a = 0;
+            // while(a<=10){
+            //     document.write(a + " ");
+            //     a++;
+            // }
+
+            // let b = 0;
+            // do{
+            //     document.write(b + " ")
+            //     b++;
+            // }while(b<=10);
+
+
+
+            // Grade Calculator -->
+
+
+        <!-- </script>
+    </body>
+</html> -->
+
+
+
+Normal Function
+--Local scope
+<html>
+    <head>
+        <title>Java script</title>
+        
+    </head>
+    <body>
+        <h1 >Java Script</h1>
+        <script>
+            function Sum(){
+                let a = 10; 
+                let b = 20;
+                document.writeln("Sum of the number: " + (a+b));
+            }
+            Sum();
+
+        </script>
+    </body>
+</html>
+
+Normal Function
+--Global scope
+<html>
+    <head>
+        <title>Java script</title>
+        
+    </head>
+    <body>
+        <h1 >Java Script</h1>
+        <script>
+            let a = 10; 
+            let b = 20;
+            function Sum(){
+                
+                document.writeln("Sum of the number: " + (a+b));
+            }
+            Sum(a,b);
+
+        </script>
+    </body>
+</html>
+
+Parameter func
+<html>
+    <head>
+        <title>Java script</title>
+    </head>
+    <body>
+        <h1 >Java Script</h1>
+        <script>
+            function Sum(a, b){
+                document.write("Sum of the numbers "+ (a + b))
+            }
+            Sum(20,40);
+        </script>
+    </body>
+</html>
+
+Parameter with argument func
+<html>
+    <head>
+        <title>Java script</title>
+    </head>
+    <body>
+        <h1 >Java Script</h1>
+        <script>
+            function Sum(a=10, b=20){
+                document.write("Sum of the numbers "+ (a + b))
+            }
+            Sum(a,b);
+        </script>
+    </body>
+</html>
+
+Arrow func
+<html>
+    <head>
+        <title>Java script</title>
+    </head>
+    <body>
+        <h1 >Java Script</h1>
+        <script>
+            let add = (a=80,b=20) => {document.write("Sum of the numbers: " + (a+b))};
+            add();
+            let sub = (c=20,d=40) => {document.write("Subtract of the number:" + (c-d))};
+            sub();
+        </script>
+    </body>
+</html>

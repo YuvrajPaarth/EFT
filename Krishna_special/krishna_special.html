@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Krishna Special</title>
+        <style>
+            img {
+                max-width: 200px;
+                height: 200px;
+                margin-left: 100px;
+                /* transition: 1s;  */
+                /* animation-name: Krishna;
+                animation-duration: 1s;
+                animation-timing-function: ease;
+                animation-delay: 1s;
+                animation-direction: alternate;
+                animation-iteration-count: infinite; */
+                animation: Krishna 3s ease alternate infinite;
+            }
+            /* RWD - RESPONSIVE WEB DESIGN */
+            @keyframes Krishna{
+                from{
+                    transform: scale(0);
+                }
+                to{
+                    transform: scale(800px);
+                }
+            }
+            /* transition - very smooth transition effect when the image is hovered over */
+            /* img:hover{
+                transform:scale(1.7)
+            } */
+            h1 {
+                color: blue;
+                text-align: center;
+            }
+            p{
+                color: red;
+                text-align: center;
+                animation: Krishna 3s ease alternate infinite;
+            }
+            
+            h2{
+                text-align: center;
+                animation: Krishna 3s ease alternate infinite;
+            }
+            div{
+                border: 2px solid black;
+                border-radius: 10px;
+                box-shadow: 5px 10px 18px #888888;
+                width: 400px;
+                background-color: lightblue;
+            }
+        </style>
+    </head>
+    <body>
+        <div> 
+            <h1>Krishna Special</h1>
+            <p>Welcome to the Krishna Special page!</p>
+            <marquee behavior="down" direction="left">
+                <img src="./pngfind.com-krishna-images-png-1455274.png" alt="Krishna Image">
+            </marquee>          
+            <h2>
+                Happy Janmashtami!
+            </h2>
+        </div>
+
+    </body>
+</html>

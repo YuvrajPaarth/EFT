@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8e8e8;
+            padding: 20px;
+        }
+        nav{
+                background-color: #5dcaf1;
+                display: flex;
+                justify-content: space-around;
+                padding: 10px;
+                margin-bottom: 20px;
+            }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .input-section {
+            background: white;
+            padding: 20px;
+            border: 2px solid #333;
+            margin-bottom: 30px;
+        }
+        
+        .input-section h2 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .input-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .input-row input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #666;
+            font-size: 14px;
+        }
+        
+        .input-row label {
+            width: 120px;
+            padding: 10px;
+            font-weight: bold;
+        }
+        
+        .subjects {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .subject-input {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .subject-input label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .subject-input input {
+            padding: 10px;
+            border: 1px solid #666;
+            font-size: 14px;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+        
+        button {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #333;
+            background-color: #ddd;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            background-color: #ccc;
+        }
+        
+        .search-section {
+            background: white;
+            padding: 15px;
+            border: 2px solid #333;
+            margin-bottom: 20px;
+        }
+        
+        .search-section input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #666;
+            font-size: 14px;
+        }
+        
+        .dashboard {
+            background: white;
+            padding: 20px;
+            border: 2px solid #333;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        table th {
+            background-color: #ddd;
+            border: 1px solid #999;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        table td {
+            border: 1px solid #999;
+            padding: 12px;
+            font-size: 14px;
+        }
+        
+        table tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .pass {
+            background-color: #90EE90;
+            text-align: center;
+        }
+        
+        .fail {
+            background-color: #FFB6C6;
+            text-align: center;
+        }
+        
+        .summary {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #999;
+            margin-top: 20px;
+        }
+        
+        .summary h3 {
+            margin-bottom: 10px;
+        }
+        
+        .summary p {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Student Result Dashboard</h1>
+        <nav>
+            <li><a href="#input-section">Home</a></li>
+            <li><a href="#search-section">Search</a></li>
+            <li><a href="#results">Results</a></li>
+            <li><a href="#summary">Summary</a></li>
+        </nav>
+
+        <!-- INPUT SECTION -->
+        <div class="input-section">
+            <h2>Add Student</h2>
+            
+            <div class="input-row">
+                <label>Name:</label>
+                <input type="text" id="name" placeholder="Enter name">
+            </div>
+            
+            <div class="input-row">
+                <label>Roll Number:</label>
+                <input type="text" id="rollno" placeholder="Enter roll number">
+            </div>
+            
+            <h3>Subject Marks (Out of 100)</h3>
+            
+            <div class="subjects">
+                <div class="subject-input">
+                    <label>Math:</label>
+                    <input type="number" id="math" placeholder="Enter marks">
+                </div>
+                
+                <div class="subject-input">
+                    <label>English:</label>
+                    <input type="number" id="english" placeholder="Enter marks">
+                </div>
+                
+                <div class="subject-input">
+                    <label>Science:</label>
+                    <input type="number" id="science" placeholder="Enter marks">
+                </div>
+                
+                <div class="subject-input">
+                    <label>Social Studies:</label>
+                    <input type="number" id="social" placeholder="Enter marks">
+                </div>
+            </div>
+            
+            <div class="button-group">
+                <button onclick="addStudent()">Add Student</button>
+                <button onclick="clearInput()">Clear</button>
+            </div>
+        </div>
+        
+        <!-- SEARCH SECTION -->
+        <div class="search-section">
+            <label>Search Student:</label>
+            <input type="text" id="searchBox" placeholder="Enter name or roll number" onkeyup="searchStudent()">
+        </div>
+        
+        <!-- DASHBOARD -->
+        <div class="results">
+            <h2>Student Results</h2>
+            <table id="studentTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll No</th>
+                        <th>Total</th>
+                        <th>Average</th>
+                        <th>Percentage</th>
+                        <th>Grade</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="summary">
+                <h3>Performance Summary</h3>
+                <p>Total Students: <span id="totalStudents">0</span></p>
+                <p>Passed: <span id="passCount">0</span> | Failed: <span id="failCount">0</span></p>
+                <p>Average Class Percentage: <span id="avgPercentage">0</span>%</p>
+        </div>
+    </div>
+    
+    <script>
+        let students = [];
+        
+        function addStudent() {
+            let name = document.getElementById('name').value;
+            let rollno = document.getElementById('rollno').value;
+            let math = Number(document.getElementById('math').value);
+            let english = Number(document.getElementById('english').value);
+            let science = Number(document.getElementById('science').value);
+            let social = Number(document.getElementById('social').value);
+            
+            if (name == "" || rollno == "") {
+                alert("Enter name and roll number");
+                return;
+            }
+            
+            let total = math + english + science + social;
+            let avg = total / 4;
+            let percent = (total / 400) * 100;
+            
+            let grade;
+            if (percent >= 90) {
+                grade = "A";
+            } else if (percent >= 80) {
+                grade = "B";
+            } else if (percent >= 70) {
+                grade = "C";
+            } else if (percent >= 60) {
+                grade = "D";
+            } else {
+                grade = "F";
+            }
+            
+            let status = percent >= 40 ? "PASS" : "FAIL";
+            
+            students.push({
+                name: name,
+                rollno: rollno,
+                total: total,
+                avg: avg,
+                percent: percent,
+                grade: grade,
+                status: status
+            });
+            
+            clearInput();
+            displayStudents(students);
+            updateSummary();
+        }
+        
+        function displayStudents(arr) {
+            let html = "";
+            arr.forEach(function(student) {
+                let statusClass = student.status == "PASS" ? "pass" : "fail";
+                html += "<tr>";
+                html += "<td>" + student.name + "</td>";
+                html += "<td>" + student.rollno + "</td>";
+                html += "<td>" + student.total + "</td>";
+                html += "<td>" + student.avg.toFixed(2) + "</td>";
+                html += "<td>" + student.percent.toFixed(2) + "%</td>";
+                html += "<td>" + student.grade + "</td>";
+                html += "<td class='" + statusClass + "'>" + student.status + "</td>";
+                html += "</tr>";
+            });
+            document.getElementById('tableBody').innerHTML = html;
+        }
+        
+        function clearInput() {
+            document.getElementById('name').value = "";
+            document.getElementById('rollno').value = "";
+            document.getElementById('math').value = "";
+            document.getElementById('english').value = "";
+            document.getElementById('science').value = "";
+            document.getElementById('social').value = "";
+        }
+        
+        function searchStudent() {
+            let search = document.getElementById('searchBox').value.toLowerCase();
+            let filtered = students.filter(function(student) {
+                return student.name.toLowerCase().includes(search) || student.rollno.toLowerCase().includes(search);
+            });
+            displayStudents(filtered);
+        }
+        
+        function updateSummary() {
+            let passCount = students.filter(s => s.status == "PASS").length;
+            let failCount = students.filter(s => s.status == "FAIL").length;
+            let avgPercent = 0;
+            
+            if (students.length > 0) {
+                let totalPercent = 0;
+                students.forEach(function(s) {
+                    totalPercent += s.percent;
+                });
+                avgPercent = (totalPercent / students.length).toFixed(2);
+            }
+            
+            document.getElementById('totalStudents').innerText = students.length;
+            document.getElementById('passCount').innerText = passCount;
+            document.getElementById('failCount').innerText = failCount;
+            document.getElementById('avgPercentage').innerText = avgPercent;
+        }
+    </script>
+</body>
+</html>

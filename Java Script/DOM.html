@@ -1,0 +1,89 @@
+<!-- <html>
+    <head>
+        <title>DOM Example</title>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <form>
+            <h1>Login Form</h1>
+            <label>Username:</label>
+            <input type="text" name="uname" id="v1"> <br><br>
+            <label>Password:</label>
+            <input type="password" name="upwd" id="v2"> <br><br>
+            <button type="button" onclick="Login()">Login</button>
+            <button>Reset</button>
+            <p id="result">Result:</p>
+        </form>
+        
+
+        <p id="Name">Hello Yuvraj</p>
+        <button onclick="Btn()">Change</button>
+        <script>
+            // FUNCTION IN JS
+            function Btn(){
+                // alert("I am Yuvraj");
+                document.getElementById("Name").innerHTML = "I am masttttt"
+            };
+
+            function Login(){
+                let uname = document.getElementById("v1").value;
+                let upwd = document.getElementById("v2").value;
+                
+                if(uname == "Yuvraj" && upwd == "3127"){
+                    document.getElementById("result").innerHTML = "Login Successful"
+                    result.style.color = "green";
+                }else{
+                    document.getElementById("result").innerHTML = "Login failed!!"
+                    result.style.color = "red";
+                }
+                
+            };
+        </script>
+    </body>
+</html> -->
+
+<html>
+    <head>
+        <title>
+            DOM - Document Object Model
+        </title>
+        <style></style>
+    </head>
+    <body>
+        <form>
+            <h1>Google</h1>
+            <label>Username:</label>
+            <input type="text" placeholder="username" id="v1" name="uid"><br><br>
+            <label>Password:</label>
+            <input type="password" placeholder="password" id="v2" name="pwd"><br><br>
+            <button type="button" onclick="Login()">Login</button>
+            <button>Reset</button>
+            <p id="result">Result:</p>
+        </form>
+
+        <p id="Name">Hello Yuvi</p>
+        <button onclick="btn()">Change</button>
+        <script>
+            function btn(){
+                document.getElementById("Name").innerHTML = "I am the Best"
+            };
+
+
+            function Login(){
+                let uid = document.getElementById("v1").value;
+                let pwd = document.getElementById("v2").value;
+
+                if(uid == "Yuvraj" && pwd == "12345"){
+                    document.getElementById("result").innerHTML = "Successful!!!";
+                    result.style.color = "Green";
+                }else{
+                    document.getElementById("result").innerHTML = "Failed!!";
+                    result.style.color = "Red";
+                }
+            }
+
+        </script>
+    </body>
+</html>

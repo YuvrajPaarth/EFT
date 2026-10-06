@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Birthday Card</title>
+        <style>
+            img {
+                max-width: 200px;
+                height: 200px;
+                margin-left: 100px;
+                animation: Bhai 3s ease alternate infinite;
+            }
+            /* RWD - RESPONSIVE WEB DESIGN */
+            @keyframes Bhai{
+                from{
+                    transform: scale(0);
+                }
+                to{
+                    transform: scale(800px);
+                }
+            }
+            /* transition - very smooth transition effect when the image is hovered over */
+            /* img:hover{
+                transform:scale(1.7)
+            } */
+            h1 {
+                color: blue;
+                text-align: center;
+            }
+            p{
+                color: red;
+                text-align: center;
+                animation: Bhai 3s ease alternate infinite;
+            }
+            
+            h2{
+                text-align: center;
+                animation: Bhai 3s ease alternate infinite;
+            }
+            div{
+                border: 2px solid black;
+                border-radius: 10px;
+                box-shadow: 5px 10px 18px #888888;
+                width: 400px;
+                background-color: gold;
+            }
+        </style>
+    </head>
+    <body>
+        <div> 
+            <h1>Birthday Card</h1>
+            <p>Welcome to the Birthday Special page!</p>
+            <marquee behavior="down" direction="left">
+                <img src="./Unknown.jpg" alt="Bhai Image">
+            </marquee>          
+            <h2>
+                Happy Birthday Brother!
+            </h2>
+        </div>
+
+    </body>
+</html>

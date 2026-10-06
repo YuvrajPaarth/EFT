@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Responsive Web Design (RWD)</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        h1 {
+            background-color: blue;
+            text-align: center;
+        }
+        p {
+            background-color: lightblue;
+        }
+        div {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        div img {
+            width: calc((100% - 2rem) / 3);
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                background-color: red;
+            }
+            p {
+                background-color: yellow;
+                text-align: center;
+            }
+            div img {
+                width: 100%;
+            }
+        }
+    </style>
+    </head>
+    <body>
+        <!-- <h1>Responsive Web Design (RWD)</h1>
+        <p>Responsive Web Design (RWD) is an approach to web design that makes web pages render well on a variety of devices and window or screen sizes. It ensures that users have a good viewing experience regardless of the device they are using.</p> -->
+    <div>
+        <img src="./Unknown.jpg" alt="Responsive Web Design Image">
+        <img src="./Unknown.jpg" alt="Responsive Web Design Image">
+        <img src="./Unknown.jpg" alt="Responsive Web Design Image">
+    </div>
+        
+    </body>
+</html>
+

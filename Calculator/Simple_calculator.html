@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color:#9be6ffa5;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #999;
+            background-color: #f5f5f5;
+        }
+        
+        .section h2 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #333;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #666;
+            font-size: 14px;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        button {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #333;
+            font-size: 14px;
+            cursor: pointer;
+            background-color: #ddd;
+        }
+        
+        button:hover {
+            background-color: #ccc;
+        }
+        
+        .result-section {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #999;
+            background-color: #f5f5f5;
+            display: none;
+        }
+        
+        .result-section.show {
+            display: block;
+        }
+        
+        .result-item {
+            margin-bottom: 10px;
+            font-size: 14px;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .result-item:last-child {
+            border-bottom: none;
+        }
+        
+        .result-label {
+            font-weight: bold;
+        }
+        
+        .result-value {
+            float: right;
+        }
+        
+        .status {
+            padding: 10px;
+            margin-top: 10px;
+            text-align: center;
+            border: 1px solid #333;
+            font-weight: bold;
+        }
+        
+        .status.pass {
+            background-color: #90EE90;
+        }
+        
+        .status.fail {
+            background-color: #FFB6C6;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Grade Calculator</h1>
+        
+        <!-- STUDENT INFORMATION SECTION -->
+        <div class="section">
+            <h2>Student Information</h2>
+            <label>Full Name:</label>
+            <input type="text" id="name" placeholder="Enter student name">
+            
+            <label>Roll Number:</label>
+            <input type="text" id="rollno" placeholder="Enter roll number">
+            
+            <label>Class:</label>
+            <input type="text" id="class" placeholder="Enter class">
+        </div>
+        
+        <!-- SUBJECTS & MARKS SECTION -->
+        <div class="section">
+            <h2>Subject Marks (Out of 100)</h2>
+            
+            <label>Mathematics:</label>
+            <input type="number" id="math" placeholder="Enter marks">
+            
+            <label>English:</label>
+            <input type="number" id="english" placeholder="Enter marks">
+            
+            <label>Science:</label>
+            <input type="number" id="science" placeholder="Enter marks">
+            
+            <label>Social Studies:</label>
+            <input type="number" id="social" placeholder="Enter marks">
+        </div>
+        
+        <!-- BUTTONS -->
+        <div class="button-group">
+            <button onclick="calculateGrade()">Calculate</button>
+            <button onclick="resetForm()">Reset</button>
+        </div>
+        
+        <!-- RESULTS SECTION -->
+        <div class="result-section" id="resultSection">
+            <h2>Results</h2>
+            
+            <div class="result-item">
+                <span class="result-label">Total Marks:</span>
+                <span class="result-value" id="totalMarks">-</span>
+            </div>
+            
+            <div class="result-item">
+                <span class="result-label">Average:</span>
+                <span class="result-value" id="average">-</span>
+            </div>
+            
+            <div class="result-item">
+                <span class="result-label">Percentage:</span>
+                <span class="result-value" id="percentage">-</span>
+            </div>
+            
+            <div class="result-item">
+                <span class="result-label">Grade:</span>
+                <span class="result-value" id="grade">-</span>
+            </div>
+            
+            <div class="status" id="statusMessage">-</div>
+        </div>
+    </div>
+    
+    <script>
+            function calculateGrade() {
+        let name = document.getElementById('name').value;
+        let math = Number(document.getElementById('math').value);
+        let english = Number(document.getElementById('english').value);
+        let science = Number(document.getElementById('science').value);
+        let social = Number(document.getElementById('social').value);
+        
+        let total = math + english + science + social;
+        let avg = total / 4;
+        let percent = (total / 400) * 100;
+        
+        let grade;
+        if (percent >= 90) {
+            grade = "A";
+        } else if (percent >= 80) {
+            grade = "B";
+        } else if (percent >= 70) {
+            grade = "C";
+        } else if (percent >= 60) {
+            grade = "D";
+        } else {
+            grade = "F";
+        }
+        
+        let msg;
+        if (percent >= 40) {
+            msg = "PASS";
+        } else {
+            msg = "FAIL";
+        }
+        
+        document.getElementById('totalMarks').innerText = total;
+        document.getElementById('average').innerText = avg;
+        document.getElementById('percentage').innerText = percent + "%";
+        document.getElementById('grade').innerText = grade;
+        document.getElementById('statusMessage').innerText = name + " - " + msg;
+        
+        let status = document.getElementById('statusMessage');
+        if (msg == "PASS") {
+            status.className = "status pass";
+        } else {
+            status.className = "status fail";
+        }
+        
+        document.getElementById('resultSection').classList.add('show');
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <style>
+        button{
+            transition: 1s;
+        }
+        button :hover{
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" name="n1" id="i1"><br><br>
+    <input type="number" name="n2" id="i2"><br><br>
+    <button onclick="Check()">Add</button>
+    <p id="para">Result:</p>
+
+    <script>
+        function Check(){
+            let n1 = Number(document.getElementById('i1').value);
+            let n2 = Number(document.getElementById('i2').value);
+            // let sum = n1 + n2;
+            if (n2>18){
+                document.getElementById('para').innerHTML = 'Ur Eligible'
+                // (document.getElementById('para').innerHTML = "Results" = sum);
+            }else{
+                document.getElementById('para').innerHTML = 'Ur not Eligible'
+            }  
+        }
+    </script>
+</body>
+</html>

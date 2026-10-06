@@ -1,0 +1,508 @@
+
+
+<html>
+    <head>
+        <title>Semantic Dep Website</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-size: 16px;
+            }
+            body{
+                font-style:initial;
+                font-size: 12px;
+            }
+            nav{
+                display: flex;
+                justify-content: space-around;
+            }
+            nav a{
+                text-decoration: none;
+                color: rgb(216, 216, 230);
+            }
+            h1{
+                text-align: center;
+                padding-top: 10px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                text-shadow: 2px 4px 6px black;
+                color: white;
+            }
+            header{
+                background-color: rgba(11, 10, 12, 0.915);
+            }
+            li{
+                color: rgb(241, 235, 236);
+                margin-top: 20px;
+                margin-bottom: 10px;
+                list-style-type: none;
+            }
+            p{
+                margin-top: 20px;
+                text-align: center;
+                font-size: 30px;
+            }
+            h2{
+                text-align: center;
+                margin-top: 10px;
+                font-size: 50px;
+                text-shadow: 2px 4px 6px rgb(15, 41, 237);
+            }
+            h3{
+                text-align: center;
+                margin-top: 30px;
+                font-size: 30px;
+                text-decoration:double;
+            }
+            h4{
+                text-align: center;
+                margin-top: 40px;
+                font-size: 40px;
+                margin-bottom: 20px;
+            }
+            .highlight-strip{
+                background-color: rgba(25, 25, 212, 0.835);
+                padding: 5px;
+                margin-top: 10px;
+            }
+            .highlight-strip1{
+                background-color: black;
+                color: aliceblue;
+            }
+            .highlight-strip1 marquee{
+                color: aliceblue;
+            }
+            .highlight-strip marquee{
+                font-size: 16px;
+                color: white;
+                font-weight: bold;
+                letter-spacing: 1px;
+            }
+            img{
+                width: 250px;
+                height: 250px;
+                border-radius: 30px;
+                box-shadow: 4px 8px 12px black;
+                                
+            }
+            article{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 40px;
+                padding: 20px;
+                margin: 0 auto;
+            }
+            .card{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .card img{
+                transition: transform 0.4s ease;
+                cursor: pointer;
+            }
+            .card img:hover{
+                transform: scale(1.2);
+            }
+            .intro-text{
+                background-color: maroon;
+                color: white;
+            }
+            .faculty-section{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                align-items: flex-start;
+                justify-content: center;
+                text-align: center;
+                gap: 20px;
+                background-color: rgba(37, 37, 135, 0.904);
+                flex-direction: row;
+                color: aliceblue;
+            }
+            .faculty-section .card{
+                text-align: center;
+                width: 300px;
+            }
+            .faculty .card p{
+                font-size: 20px;
+                
+            }
+            .courses p{
+                font-size: 20px;
+                
+            }
+            .achievements{
+                background-color:firebrick;
+                color: white;
+            }
+            .achievements p{
+                font-size: 20px;
+                text-align: center;
+                margin-top: 20px;
+            }
+            .achievements ul li{
+                color: white;
+                margin-left: 20px;
+            }
+            .about{
+                height: 800px;
+            }
+            .time-table{
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 20px;
+
+                
+            }
+            table{
+                width: 80%;
+                margin: 0 auto;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            .events-section{
+                color: rgb(3, 57, 103);
+            }
+            .events{
+                padding: 20px;
+            }
+            ul li{
+                color: rgb(7, 14, 20);
+                margin-left: 20px;
+            }
+            .events-section .ul li {
+                color: rgb(150, 179, 203);
+                margin-left: 20px;
+            }
+            .courses-grid {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .courses-grid .card {
+                margin: 0;
+                padding: 20px;
+                background-color: #f2f2f2;
+            }
+
+            .courses-grid p {
+                margin: 8px 0;
+                font-size: 18px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1 >Semantic Dep Website</h1>
+            <nav>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#About">About Department</a></li>
+                <li><a href="#faculty">Faculty</a></li>
+                <li><a href="#Courses">Courses</a></li>
+                <li><a href="#TimeTable">TimeTable</a></li>
+                <li><a href="#Achievements">Achievements</a></li>
+                <li><a href="#Events">Events</a></li>
+                <li><a href="#Contacts">Contacts</a></li>
+            </nav>
+        </header>
+        <!-- HOME SECTION -->
+        <section>
+            <div id="Home" class="intro-text"><p>Master of Computer Applications (MCA) program</p>
+                <p>The Master of Computer Applications (MCA) program with specializations in Data Science, Generative AI, Cyber Security and Game Designing 
+                    is designed to deliver advanced computing knowledge along with domain-specific expertise aligned to emerging industry trends.</p>
+            </div>
+            <div class = "highlight-strip">
+                <marquee scrollamount="7">Admission Open 2027-2028. Apply Now &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; Admission Open 2027-2028. Apply Now &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; Admission Open 2027-2028. Apply Now &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; Admission Open 2027-2028. Apply Now &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; Admission Open 2027-2028. Apply Now &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; Admission Open 2027-2028. Apply Now</marquee>
+            </div>
+            <h3 class="highlight-strip1">Highlights</h3>
+        <article>
+            <div class="card">
+                <img src="./geralt-artificial-intelligence-4389372.jpg" alt="image not found">
+                <p>Data Science</p>
+            </div>
+            <div class="card">
+                <img src="./nayan-ai-robot-technology-9531477.jpg" alt="image not found">
+                <p>Generative AI</p>
+            </div>
+            <div class="card">
+                <img src="./thedigitalartist-security-4851428.jpg" alt="image not found">
+                <p>Cyber Security</p>
+            </div>
+            <div class="card">
+                <img src="./piro4d-king-1716907.jpg" alt="image not found">
+                <p>Game Designing</p>
+            </div>
+        </article>
+        </section>
+
+        <!-- ABOUT DEPARTMENT -->
+        <section class ="about">
+            <h3 id="About" class="highlight-strip1">About Department</h3>
+            <article>
+                <div class="card">
+                    <h4>Vision</h4>
+                    <p>To be a center of excellence in computer applications, producing industry-ready professionals 
+                        equipped with cutting-edge skills in Data Science, AI, and emerging technologies.</p>
+                </div>
+                <div class="card">
+                    <h4>Mission</h4>
+                    <p>To provide quality education through innovative teaching, research, and hands-on training 
+                        that prepares students for real-world challenges.</p>
+                
+                </div>
+                <div class="card">
+                    <h4>Objectives</h4>
+                    <p>To be a center of excellence in computer applications, producing industry-ready professionals 
+                        equipped with cutting-edge skills in Data Science, AI, and emerging technologies.</p>
+                </div>
+            </article>
+        </section>
+
+        <!-- FACULTY SECTION -->
+        <section class="faculty">
+            <h3 id="faculty" class="highlight-strip1">Faculty</h3>
+            <article class="faculty-section">
+                <div class="card">
+                    <img src="./Lelin f.jpeg" alt="image not found">
+                    <p>Mr. Lelin</p>
+                    <p>Professor & HOD - Department of Computer Science</p>
+                    <p>Ph.D. in Information and Communication Engineering</p>
+                </div>
+                <div class="card">
+                    <img src="./Oleti f.jpeg" alt="image not found">
+                    <p>Oleti Durga Bravish</p>
+                    <p>Professor</p>
+                    <p>MCA Computer Science</p>
+                </div>
+                <div class="card">
+                    <img src="./PRAMISHA GEWALI f.png" alt="image not found">
+                    <p>PRAMISHA GEWALI</p>
+                    <p>Professor</p>
+                    <p>Master of mathematics</p>
+                </div>
+                <div class="card">
+                    <img src="./ABHISHEK A.jpeg" alt="image not found">
+                    <p>Mr. Abhishek A</p>
+                    <p>Professor</p>
+                    <p>MCA Computer Science</p>
+                </div>
+                <!-- <div class="card">
+                    <img src="./dr-rashmi-17-02-2022 faculty.jpg" alt="image not found">
+                    <p>Dr. Rashmi</p>
+                    <p>Assistant Professor</p>
+                    <p>Ph.D. in Physics</p>
+                </div>
+                <div class="card">
+                    <img src="./dr-saswati-debnath faculty.jpg" alt="image not found">
+                    <p>Dr. Saswati Debnath</p>
+                    <p>Associate Professor</p>
+                    <p>Ph.D. in Computer Science and Engineering</p>
+                </div>
+                <div class="card">
+                    <img src="./dr-rc-karpagalakshmi-v1 faculty.webp" alt="image not found">
+                    <p>Dr. R.C. Karpagalakshmi</p>
+                    <p>Professor</p>
+                    <p>Ph.D. in Computer Science and Engineering</p>
+                </div>
+                <div class="card">
+                    <img src="./dr-k-a-venkatesh-v1 faculty.webp" alt="image not found">
+                    <p>Dr K A Venkatesh</p>
+                    <p>Professor & Registrar (Examination & Evaluation)</p>
+                    <p>Ph.D. in Mathematics</p>
+                </div> -->
+                
+            </article>               
+        </section>
+
+            <!-- COURSES SECTION -->
+            <section class="courses">
+            <h3 id="Courses" class="highlight-strip1">Courses</h3>
+            <div class="courses-grid">
+                <div class="card">
+                    <h4>Semester 1</h4>
+                    <p>Data Structures and Algorithms</p>
+                    <p>Database Management Systems</p>
+                    <p>Computer Networks</p>
+                    <p>Operating Systems</p>
+                </div>
+
+                <div class="card">
+                    <h4>Semester 2</h4>
+                    <p>Object-Oriented Programming</p>
+                    <p>Software Engineering</p>
+                    <p>Artificial Intelligence</p>
+                    <p>Machine Learning</p>
+                </div>
+
+                <div class="card">
+                    <h4>Semester 3</h4>
+                    <p>Data Science and Analytics</p>
+                    <p>Cloud Computing</p>
+                    <p>Cyber Security</p>
+                    <p>Web Development</p>
+                </div>
+
+                <div class="card">
+                    <h4>Semester 4</h4>
+                    <p>Mobile Application Development</p>
+                    <p>Big Data Analytics</p>
+                    <p>Natural Language Processing</p>
+                    <p>Capstone Project</p>
+                </div>
+            </div>
+            </section>
+
+            <!-- TIME TABLE SECTION -->
+            <section>
+                <h3 id="TimeTable" class="highlight-strip1">Time Table</h3>
+                <table border="1" cellpadding="10" cellspacing="0" class="time-table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>9:00 AM - 10:00 AM</th>
+                            <th>10:00 AM - 11:00 AM</th>
+                            <th>11:00 AM - 12:00 PM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>Data Structures</td>
+                            <td>Database Management</td>
+                            <td>Computer Networks</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>Operating Systems</td>
+                            <td>Object-Oriented Programming</td>
+                            <td>Software Engineering</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>Artificial Intelligence</td>
+                            <td>Machine Learning</td>
+                            <td>Data Science</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>Cloud Computing</td>
+                            <td>Cyber Security</td>
+                            <td>Web Development</td> 
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>Mobile App Development</td>
+                            <td>Big Data Analytics</td>
+                            <td>Natural Language Processing</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>Capstone Project</td>
+                            <td>Elective 1</td>
+                            <td>Elective 2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- ACHIEVEMENTS SECTION -->
+            <section id="Achievements" class="achievements">
+                <h3 id="Achievements" class="highlight-strip1">Achievements</h3>
+                
+                <h4>Recognising Effort, Celebrating Success</h4>
+                            <div class="card">
+                <h4>Student Achievements</h4>
+                    <ul>
+                        <li>Team secured 1st place at Smart India Hackathon 2026 (Software Edition)</li>
+                        <li>MCA batch students published research paper on Generative AI applications in IEEE conference</li>
+                        <li>3 students placed in top product companies through campus recruitment drive</li>
+                    </ul>
+
+                <h4>Faculty Achievements</h4>
+                    <ul>
+                        <li>Dr. K Ramalakshmi received Best Research Paper Award at International Conference on ICT 2026</li>
+                        <li>Dr. Saswati Debnath secured funded research project on AI-driven healthcare systems</li>
+                        <li>Dr. Vivek V published book chapter on Cyber Security frameworks</li>
+                    </ul>
+
+                <h4>Events</h4>
+                <div class="card">
+                    <img src="./achi sec1.jpg" alt="image not found">
+                    <p>National Skill Development Corporation</p>
+                </div>   
+                <div class="card">
+                    <img src="./achi sect2.jpg" alt="image not found">
+                    <p>AICTE - Virtual Internship</p>
+                </div>         
+            </section>
+
+            <!-- EVENTS SECTION -->
+            <section id="Events" class="events">
+                <h3 class="highlight-strip1">Events</h3>
+                <article class="events-section">
+                    <div class="card">
+                        <h4>Workshops</h4>
+                        <ul>
+                            <li>Hands-on Workshop on Generative AI and LLMs</li>
+                            <li>Python for Data Science Bootcamp</li>
+                            <li>Cyber Security Awareness Workshop</li>
+                            <li>Full Stack Web Development Workshop</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>Seminars</h4>
+                        <ul>
+                            <li>Guest Lecture on Career Opportunities in Data Science</li>
+                            <li>Seminar on Ethical Hacking and Cyber Law</li>
+                            <li>Industry Expert Talk on AI in Game Development</li>
+                            <li>Seminar on Research Methodology for MCA Scholars</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>Hackathons</h4>
+                        <ul>
+                            <li>Alliance University Internal Hackathon 2026</li>
+                            <li>Smart India Hackathon - Department Level Screening</li>
+                            <li>24-Hour Code Sprint on AI Solutions</li>
+                            <li>Inter-College Hackathon on Sustainable Tech</li>
+                        </ul>
+                    </div>
+                </article>
+            </section>
+
+            <!-- CONTACTS SECTION -->
+
+            <!-- Contact
+            o Department address
+            o Email
+            o Phone
+            o Contact form -->
+            <section id="Contacts" class="contacts">
+                <h3 class="highlight-strip1">Contacts</h3>
+                <article>
+                    <div class="card">
+                        <h4>Department of Computer Science and Engineering</h4>
+                        <ul>
+                            <li>Address: Alliance University, Bilekahalli, Bangalore, Karnataka 560076, India</li>
+                            <li>Email: cse@allianceuniversity.edu.in</li>
+                            <li>Phone: +91 80 1234 5678</li>
+                        </ul>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </body>
+</html>
+
+
+<!-- ### Display Flex - vertical to horizontal -->
+
+<!-- Multimedia in HTML - img, vid, aud... -->
