@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration:maroon;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8e8e8;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border: 2px solid #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-section {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .input-section input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #666;
+        }
+
+        .input-section button {
+            padding: 10px 20px;
+            border: 1px solid #333;
+            background-color: #ddd;
+            cursor: pointer;
+        }
+
+        .input-section button:hover {
+            background-color: #ccc;
+        }
+
+        .task-list {
+            margin-bottom: 20px;
+        }
+
+        .task-item {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            align-items: center;
+        }
+
+        .task-item input {
+            width: 18px;
+            height: 18px;
+        }
+
+        .task-item span {
+            flex: 1;
+        }
+
+        .task-item span.done {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .task-item button {
+            padding: 5px 10px;
+            border: 1px solid #666;
+            background-color: #ffcccc;
+            cursor: pointer;
+        }
+
+        .task-item button:hover {
+            background-color: #ff9999;
+        }
+
+        .button-section {
+            display: flex;
+            gap: 10px;
+        }
+
+        .button-section button {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #333;
+            background-color: #6baed5;
+            cursor: pointer;
+        }
+
+        .button-section button:hover {
+            background-color: #e79e67;
+        }
+
+        .task-count {
+            padding: 10px;
+            background-color: #f5f5f5;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>To-Do List</h1>
+
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="Enter task">
+            <button onclick="addTask()">Add</button>
+        </div>
+
+        <div class="task-count">
+            Total: <span id="totalCount">0</span> | Done: <span id="doneCount">0</span>
+        </div>
+
+        <div class="task-list" id="taskList">
+        </div>
+
+        <div class="button-section">
+            <button onclick="clearDone()">Clear Done</button>
+            <button onclick="clearAll()">Clear All</button>
+        </div>
+    </div>
+
+    <script>
+        let tasks = [];
+
+        function addTask() {
+            let input = document.getElementById('taskInput').value;
+            
+            if (input == "") {
+                alert("Enter a task");
+                return;
+            }
+
+            tasks.push({
+                id: Date.now(),
+                text: input,
+                done: false
+            });
+
+            document.getElementById('taskInput').value = "";
+            showTasks();
+            updateCount();
+        }
+
+        function deleteTask(id) {
+            tasks = tasks.filter(t => t.id != id);
+            showTasks();
+            updateCount();
+        }
+
+        function toggleTask(id) {
+            for (let i = 0; i < tasks.length; i++) {
+                if (tasks[i].id == id) {
+                    tasks[i].done = !tasks[i].done;
+                }
+            }
+            showTasks();
+            updateCount();
+        }
+
+        function showTasks() {
+            let html = "";
+            
+            for (let i = 0; i < tasks.length; i++) {
+                let task = tasks[i];
+                let doneClass = task.done ? "done" : "";
+                
+                html += "<div class='task-item'>";
+                html += "<input type='checkbox' " + (task.done ? "checked" : "") + " onchange='toggleTask(" + task.id + ")'>";
+                html += "<span class='" + doneClass + "'>" + task.text + "</span>";
+                html += "<button onclick='deleteTask(" + task.id + ")'>Delete</button>";
+                html += "</div>";
+            }
+
+            document.getElementById('taskList').innerHTML = html;
+        }
+
+        function clearDone() {
+            tasks = tasks.filter(t => !t.done);
+            showTasks();
+            updateCount();
+        }
+
+        function clearAll() {
+            tasks = [];
+            showTasks();
+            updateCount();
+        }
+
+        function updateCount() {
+            let total = tasks.length;
+            let done = tasks.filter(t => t.done).length;
+            
+            document.getElementById('totalCount').innerText = total;
+            document.getElementById('doneCount').innerText = done;
+        }
+    </script>
+
+</body>
+</html>
