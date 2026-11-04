@@ -1,0 +1,30 @@
+/* 1. Target the parent element (usually body) to handle the centering */
+body {
+  margin: 0;                   /* Removes default browser margins */
+  height: 100vh;               /* Makes the body take up the full screen height */
+  display: flex;               /* Activates Flexbox */
+  justify-content: center;     /* Centers the div horizontally */
+  align-items: center;         /* Centers the div vertically */
+  background-color: #222;      /* Optional: Dark background so your aquamarine h1 pops! */
+}
+
+/* 2. Your original code (with a couple of minor alignment tweaks) */
+div {
+  background-color: rgba(115, 115, 232, 0.412);
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 2px 4px 8px black;
+  padding: 200px;               /* Added: Gives your content room to breathe inside the box */
+  text-align: center;          /* Added: Centers the button and elements inside the div */
+}
+
+h1 {
+  color: aquamarine;
+  text-align: center;
+  margin-top: 0;               /* Added: Prevents default h1 margin from messing up padding */
+}
+
+button {
+  margin: 10px;
+  margin-top: 20px;
+}

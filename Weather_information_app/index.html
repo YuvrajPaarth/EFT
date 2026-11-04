@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Information App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+
+        <div class="search">
+            <input
+                type="text"
+                id="city"
+                placeholder="Enter city name"
+                aria-label="City name"
+                spellcheck="false"
+            >
+            <button type="button" onclick="getWeather()">
+                <img src="./search.png" alt="Search">
+            </button>
+        </div>
+
+        <p id="loading"></p>
+        <p id="error"></p>
+
+        <div class="weather" id="weather">
+            <img id="weatherIcon" src="./thunderstorms_day_light.svg" alt="Weather Icon">
+            <h1 id="temperature"></h1>
+            <h2 id="cityName"></h2>
+
+            <div class="details">
+                <p id="condition"></p>
+                <p id="humidity"></p>
+                <p id="wind"></p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="API.js"></script>
+</body>
+</html>
