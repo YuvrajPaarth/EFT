@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporary Var</title>
+    <script>
+        let a = prompt('Enter a number: ')
+        let b = prompt("Enter second number: ")
+        document.write(`The first number is ${a} and the second number is ${b}`)
+
+        var temp;
+        temp = a;
+        a = b;
+        b = temp;
+        document.write(`After swapping \n The first number is ${a} and the second number is ${b}`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
