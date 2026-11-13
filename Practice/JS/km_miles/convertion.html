@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertion</title>
+    <script>
+        function convert(){
+            var kms = document.getElementById("convo").value;
+            const factor = 0.621371;
+            var miles = kms * factor;
+            document.getElementById('res').innerText = miles;
+        }
+    </script>
+</head>
+<body>
+    <input type="number" id="convo" placeholder="Enter the number">kms
+    <button onclick="convert()">Convert</button>miles
+    <h2 id="res"></h2>
+</body>
+</html>
